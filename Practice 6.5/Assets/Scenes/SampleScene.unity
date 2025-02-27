@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d952bf784b6cd4f91a384d09f6980b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pins: 040000000300000005000000
   Pin1Text: {fileID: 1520402686}
   Pin2Text: {fileID: 1024724640}
   Pin3Text: {fileID: 661045352}
