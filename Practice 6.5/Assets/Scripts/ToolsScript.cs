@@ -8,9 +8,6 @@ public class ToolsScript : MonoBehaviour
     public Text Pin1Text;
     public Text Pin2Text;
     public Text Pin3Text;
-   // private int Pin1Value;
-    //private int Pin2Value;
-    //private int Pin3Value;
 
     private int answer = 5;
 
@@ -55,9 +52,6 @@ public class ToolsScript : MonoBehaviour
     public void SetPinValues()
     {
         Pins = new int[] { 4, 3, 5 };
-       // Pin1Value = 4;
-       // Pin2Value = 3;
-       // Pin3Value= 5;
         ShowResult();
     }
 
