@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -10,13 +11,17 @@ public class CubeController : MonoBehaviour
 
     private Animator anim;
     private Rigidbody rb;
+    private MeshRenderer boxMesh;
 
-   
+    [SerializeField] private ParticleSystem Explosion;
+    private Transform ExplosionTransform;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        
+        boxMesh = GetComponentInChildren<MeshRenderer>();
+        ExplosionTransform = Explosion.GetComponent<Transform>();
     }
 
    
@@ -30,9 +35,12 @@ public class CubeController : MonoBehaviour
     {
         if (other.CompareTag("DeathTrigger"))
         {
-            Destroy(gameObject);
-            BoxCount++;
-            UpdateText();
+            ExplosionTransform.position = transform.position;
+            Explosion.Play();
+            boxMesh.enabled = false;
+           StartCoroutine(timer());
+           BoxCount++;
+           UpdateText();
         }
     }
 
@@ -41,6 +49,12 @@ public class CubeController : MonoBehaviour
     {
 
         BoxCountText.text = BoxCount.ToString();
+    }
+
+    private IEnumerator timer()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
 }

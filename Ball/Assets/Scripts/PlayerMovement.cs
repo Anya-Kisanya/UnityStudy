@@ -13,7 +13,7 @@ namespace WildBall.Inputs
       
         [SerializeField, Range(0, 10)] private float speed = 2.0f;
 
-
+        public Vector3 jump;
 
         private void Awake()
         {
@@ -33,6 +33,7 @@ namespace WildBall.Inputs
         {
             playerRb.AddForce(movement * speed);
         }
+      
 #if UNITY_EDITOR
         [ContextMenu("Reset Values")]
         public void ResetValues()

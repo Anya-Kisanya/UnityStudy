@@ -9,6 +9,7 @@ namespace WildBall.Inputs
     {
         
         private Vector3 movement;
+        private Vector3 jump;
         private PlayerMovement PlayerMovement;
 
         private void Awake()
@@ -22,9 +23,11 @@ namespace WildBall.Inputs
         {
             float horizontal = Input.GetAxis(GlobalStringVars.HORIZONTAL_AXIS);
             float vertical = Input.GetAxis(GlobalStringVars.VERTICAL_AXIS);
+            
 
             movement = new Vector3(horizontal, 0, vertical).normalized;
 
+            
 
         }
 

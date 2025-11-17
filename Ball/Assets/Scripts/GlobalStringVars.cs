@@ -7,7 +7,7 @@ namespace WildBall.Inputs
 
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
-    public const string JUNP_BUTTON = "Jump";
+    public const string JUMP_BUTTON = "Jump";
 
     #endregion
     }

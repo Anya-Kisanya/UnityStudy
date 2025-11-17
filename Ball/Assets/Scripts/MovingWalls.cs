@@ -14,11 +14,20 @@ public class MovingWalls : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         animator.SetBool("PlayerInRoom", true);
+        StartCoroutine(timer());
     }
 
     private void OnTriggerExit(Collider other)
     {
         animator.SetBool("PlayerInRoom", false);
     }
-   
+
+    private IEnumerator timer()
+    {
+        yield return new WaitForSeconds(4);
+        {
+            animator.SetBool("PlayerInRoom", false);
+        }
+    }
+
 }

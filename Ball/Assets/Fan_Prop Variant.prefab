@@ -134,17 +134,17 @@ PrefabInstance:
     - target: {fileID: 1090149919819578988, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.182395
+      value: -7.5903616
       objectReference: {fileID: 0}
     - target: {fileID: 1090149919819578988, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.322954
+      value: 5.6304708
       objectReference: {fileID: 0}
     - target: {fileID: 1090149919819578988, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.72
+      value: 20.11
       objectReference: {fileID: 0}
     - target: {fileID: 1090149919819578988, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
         type: 3}
@@ -181,10 +181,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6169993613506482392, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeathTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 7769912462131510987, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
         type: 3}
       propertyPath: m_Name
       value: Fan_Prop Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769912462131510987, guid: 9c41d981db5f5c14c8a3c97fa7093eaf,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeathTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3127028891294383370, guid: 9c41d981db5f5c14c8a3c97fa7093eaf, type: 3}
@@ -310,7 +320,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
