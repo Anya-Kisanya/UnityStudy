@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class DeathController : MonoBehaviour
 {
     [SerializeField] private GameObject GameOver;
+    [SerializeField] private GameObject Victory;
     private bool Paused = false;
     private MeshRenderer playerMesh;
 
     [SerializeField] private ParticleSystem Confetti;
+    [SerializeField] private ParticleSystem WinConfetti;
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class DeathController : MonoBehaviour
     {
         if (other.CompareTag("DeathTrigger"))
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
             playerMesh.enabled = false;
             Confetti.Play();
             StartCoroutine(timer());
@@ -28,6 +30,12 @@ public class DeathController : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (other.CompareTag("VictoryTrigger"))
+        {
+            WinConfetti.Play();
+            
+            StartCoroutine(timer2());
         }
 
     }
@@ -39,6 +47,16 @@ public class DeathController : MonoBehaviour
             GameOver.SetActive(true);
             PauseGame();
         }
+    }
+
+    private IEnumerator timer2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        {
+            Victory.SetActive(true);
+            PauseGame();
+        }
+    
     }
 
     public void PauseGame()

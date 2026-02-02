@@ -8,10 +8,21 @@ public class Hints : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
             HintPanel.SetActive(true);
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        HintPanel.SetActive(false);
+        
+        StartCoroutine(timer());
+    }
+
+    private IEnumerator timer()
+    {
+        yield return new WaitForSeconds(1f);
+        {
+            HintPanel.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 }

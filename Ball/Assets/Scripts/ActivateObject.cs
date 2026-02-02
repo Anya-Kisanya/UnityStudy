@@ -34,7 +34,6 @@ public class ActivateObject : MonoBehaviour
 
    private void PullLever()
     {
-        Debug.Log("E pressed");
         if (_gameObject.activeSelf)
         _gameObject.SetActive(false);
         else _gameObject.SetActive(true);

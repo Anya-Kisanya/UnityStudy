@@ -12,6 +12,7 @@ public class CubeController : MonoBehaviour
     private Animator anim;
     private Rigidbody rb;
     private MeshRenderer boxMesh;
+    private Collider boxCol;
 
     [SerializeField] private ParticleSystem Explosion;
     private Transform ExplosionTransform;
@@ -20,6 +21,7 @@ public class CubeController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        boxCol = GetComponent<Collider>();
         boxMesh = GetComponentInChildren<MeshRenderer>();
         ExplosionTransform = Explosion.GetComponent<Transform>();
     }
@@ -38,6 +40,7 @@ public class CubeController : MonoBehaviour
             ExplosionTransform.position = transform.position;
             Explosion.Play();
             boxMesh.enabled = false;
+            boxCol.enabled = false;
            StartCoroutine(timer());
            BoxCount++;
            UpdateText();

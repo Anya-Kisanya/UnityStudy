@@ -33,14 +33,12 @@ namespace WildBall.Inputs
         {
             playerRb.AddForce(movement * speed);
         }
-      
-#if UNITY_EDITOR
-        [ContextMenu("Reset Values")]
+
         public void ResetValues()
         {
             speed = 2;
         }
-#endif
+
     }
 
 }

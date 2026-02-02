@@ -24,7 +24,7 @@ public class ChangeAnimation : MonoBehaviour
          {
              yield return new WaitForSeconds(3);
              anim.SetInteger("AnimNumber", Random.Range(1, 4));
-             Debug.Log("ping");
+             
          }
         
     }
